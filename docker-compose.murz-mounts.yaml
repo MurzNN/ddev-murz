@@ -1,0 +1,12 @@
+#ddev-generated
+services:
+  web:
+    volumes:
+      - "./homemounts/.vscode-server:/home/alexey_korepov/.vscode-server"
+      - "$HOME/.cache/ddev/vscode/containers-bin:/home/alexey_korepov/.vscode-server/bin"
+      - "$HOME/.cache/ddev/vscode/extensionsCache:/home/alexey_korepov/.vscode-server/extensionsCache"
+      - "$HOME/.ssh:/home/alexey_korepov/.ssh"
+      - "./homemounts/.local:/home/alexey_korepov/.local"
+      - "$HOME/.local/bin:/home/alexey_korepov/.local/bin"
+      - "$HOME/.gitconfig:/home/alexey_korepov/.gitconfig"
+      - "$HOME/.local/share/pnpm:/home/alexey_korepov/.local/share/pnpm"

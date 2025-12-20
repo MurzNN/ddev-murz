@@ -1,0 +1,15 @@
+name: ddev-murz
+
+project_files:
+  - docker-compose.murz-mounts.yaml
+  - homemounts/.local/.keep
+  - homemounts/.local/share/.keep
+  - homemounts/.vscode-server/.keep
+  - nginx/https-redirect.conf
+  - config.murz-packages.yaml
+  - homeadditions/.bashrc.d/murz.sh
+  - web-build/Dockerfile.murz
+
+dependencies:
+  - envsa/ddev-pnpm
+  - MurzNN/ddev-kubernetes
