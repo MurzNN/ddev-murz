@@ -10,3 +10,5 @@ services:
       - "$HOME/.local/bin:$HOME/.local/bin"
       - "$HOME/.gitconfig:$HOME/.gitconfig"
       - "$HOME/.local/share/pnpm:$HOME/.local/share/pnpm"
+      - "$HOME/.config/pnpm:$HOME/.config/pnpm"
+      - "$HOME/.cache/pnpm:$HOME/.cache/pnpm"

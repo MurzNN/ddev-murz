@@ -1,2 +1,4 @@
 #ddev-generated
-RUN npm install --global ni
+
+# Fix cache directory permissions for non-root user
+RUN mkdir /home/$username/.cache -p && chown $username: /home/$username/.cache
