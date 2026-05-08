@@ -6,16 +6,15 @@ project_files:
   - homemounts/.local/.keep
   - homemounts/.local/share/.keep
   - homemounts/.vscode-server/.keep
-  - nginx/https-redirect.conf
+  - nginx/murz.https-redirect.conf
   - config.murz-custom.yaml
   - config.murz-packages.yaml
   - homeadditions/.bashrc.d/murz.sh
   - web-build/Dockerfile.murz
-  - root/.git/info/exclude
+  - ddev-murz
 
 post_install_actions:
  - |
    mkdir -p ${DDEV_APPROOT}/.git/info
-   cp root/.git/info/exclude ${DDEV_APPROOT}/.git/info/exclude -f
-   rm root/.git/info/exclude
+   cp ddev-murz/_dot-git-info/exclude ${DDEV_APPROOT}/.git/info/exclude -f
 

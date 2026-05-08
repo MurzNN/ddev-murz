@@ -1,0 +1,16 @@
+#ddev-generated
+# git ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+# For a project mostly in C, the following would be a good set of
+# exclude patterns (uncomment them if you want to use them):
+# *.[oa]
+# *~
+.ddev/ddev-murz
+.ddev/homemounts
+.ddev/homeadditions/.bashrc.d/murz*
+.ddev/web-build/*.murz
+.ddev/nginx/murz.*
+.ddev/docker-compose.murz*
+.ddev/addon-metadata/ddev-murz
+.ddev/config.murz*
+*.code-workspace
