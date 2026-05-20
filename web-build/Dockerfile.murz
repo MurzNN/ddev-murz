@@ -1,4 +1,14 @@
 #ddev-generated
 
 # Fix cache directory permissions for non-root user
-RUN mkdir /home/$username/.cache -p && chown $username: /home/$username/.cache
+RUN bash -eux <<'SHELL'
+DIRS=(
+	.cache
+	.bashrc.d
+)
+for rel in "${DIRS[@]}"; do
+	dir="/home/$username/$rel"
+	mkdir -p "$dir"
+	chown "$username:" "$dir"
+done
+SHELL
