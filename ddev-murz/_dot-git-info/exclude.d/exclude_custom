@@ -1,0 +1,2 @@
+# Remove the line "#ddev-generated" and put here custom per-project git exclude rules
+#ddev-generated

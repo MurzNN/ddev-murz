@@ -1,2 +1,14 @@
 #ddev-generated
 corepack_enable: true
+
+web_extra_exposed_ports:
+     - name: "murz-http-redirect"
+       container_port: 80
+       http_port: 80
+       https_port: 10928
+
+web_extra_daemons:
+  - name: "murz-https-redirect"
+    command: $HOME/bin/https-redirect.js
+    directory: /tmp
+    environment: HOME="%(ENV_HOME)s"

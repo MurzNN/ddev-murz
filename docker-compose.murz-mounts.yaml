@@ -2,9 +2,6 @@
 services:
   web:
     volumes:
-      - "./homemounts/.vscode-server:$HOME/.vscode-server"
-      - "$HOME/.cache/ddev/vscode/containers-bin:$HOME/.vscode-server/bin"
-      - "$HOME/.cache/ddev/vscode/extensionsCache:$HOME/.vscode-server/extensionsCache"
       - "$HOME/.ssh:$HOME/.ssh"
       - "./homemounts/.local:$HOME/.local"
       - "$HOME/.local/bin:$HOME/.local/bin"
@@ -13,4 +10,6 @@ services:
       # For mounted files, parent directories should be listed in the file `web-build/Dockerfile.murz` to fix permissions issues.
       - "$HOME/.config/pnpm:$HOME/.config/pnpm"
       - "$HOME/.cache/pnpm:$HOME/.cache/pnpm"
+      # A workaround to fix the directory owner to not be root.
+      - "./ddev-murz/.bashrc.d:$HOME/.bashrc.d"
       - "$HOME/.bashrc.d/murz.local.sh:$HOME/.bashrc.d/murz.local.sh"

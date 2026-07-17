@@ -1,20 +1,20 @@
 name: ddev-murz
 
+dependencies:
+  - MurzNN/ddev-vscode
+  - MurzNN/ddev-cursor
+  - MurzNN/ddev-x11
+
 project_files:
+  - ddev-murz
   - docker-compose.murz-mounts.yaml
-  - homemounts/.cache/.keep
-  - homemounts/.local/.keep
-  - homemounts/.local/share/.keep
-  - homemounts/.vscode-server/.keep
   - nginx/murz.https-redirect.conf
   - config.murz-custom.yaml
   - config.murz-packages.yaml
   - homeadditions/.bashrc.d/murz.sh
-  - web-build/Dockerfile.murz
-  - ddev-murz
 
 post_install_actions:
  - |
    mkdir -p ${DDEV_APPROOT}/.git/info
-   cp ddev-murz/_dot-git-info/exclude ${DDEV_APPROOT}/.git/info/exclude -f
+   cat ddev-murz/_dot-git-info/exclude.d/* > ${DDEV_APPROOT}/.git/info/exclude
 

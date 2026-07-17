@@ -2,3 +2,5 @@
 webimage_extra_packages:
   - htop
   - mc
+  # AI agents tend to use `rg` command
+  - ripgrep
