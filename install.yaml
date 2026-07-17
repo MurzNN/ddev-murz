@@ -12,9 +12,4 @@ project_files:
   - config.murz-custom.yaml
   - config.murz-packages.yaml
   - homeadditions/.bashrc.d/murz.sh
-
-post_install_actions:
- - |
-   mkdir -p ${DDEV_APPROOT}/.git/info
-   cat ddev-murz/_dot-git-info/exclude.d/* > ${DDEV_APPROOT}/.git/info/exclude
-
+  - homeadditions/bin/https-redirect.js
