@@ -8,6 +8,7 @@ services:
       - "$HOME/.gitconfig:$HOME/.gitconfig"
       - "$HOME/.local/share/pnpm:$HOME/.local/share/pnpm"
       # For mounted files, parent directories should be listed in the file `web-build/Dockerfile.murz` to fix permissions issues.
+      - "$HOME/.config/gh:$HOME/.config/gh"
       - "$HOME/.config/pnpm:$HOME/.config/pnpm"
       - "$HOME/.cache/pnpm:$HOME/.cache/pnpm"
       # A workaround to fix the directory owner to not be root.
