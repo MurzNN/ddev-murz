@@ -3,7 +3,7 @@ name: ddev-murz
 dependencies:
   - MurzNN/ddev-vscode
   - MurzNN/ddev-cursor
-  - MurzNN/ddev-x11
+  - MurzNN/ddev-playwright
 
 project_files:
   - ddev-murz
