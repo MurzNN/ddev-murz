@@ -9,6 +9,7 @@ shopt -s histappend
 
 # Save timestamps (Format: YYYY-MM-DD HH:MM:SS)
 export HISTTIMEFORMAT="%F %T "
+export HISTIGNORE="set *o *"
 
 # Keep file size reasonable for performance
 export HISTSIZE=2000
