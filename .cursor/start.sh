@@ -31,6 +31,9 @@ start_dockerd() {
 start_dockerd
 
 # Allow the current user to talk to the daemon without sudo for this session.
+# dockerd can leave /var/run mode 0700, which blocks non-root access to the
+# socket even when the socket itself is world-writable.
+sudo chmod 755 /run /var/run 2>/dev/null || true
 sudo chmod 666 /var/run/docker.sock || true
 
 # In this nested-container environment, same-bridge container-to-container
