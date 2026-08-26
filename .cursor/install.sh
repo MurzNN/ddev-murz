@@ -5,12 +5,17 @@
 set -euo pipefail
 
 export DEBIAN_FRONTEND=noninteractive
+# Keep existing config files on conffile conflicts without prompting. The base
+# image ships a pre-existing /etc/fuse.conf, and installing fuse-overlayfs pulls
+# in fuse3, whose conffile prompt would otherwise hang/abort a non-interactive
+# install even with DEBIAN_FRONTEND=noninteractive set.
+APT_OPTS=(-y -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confold)
 
 echo "==> Installing base packages (fuse-overlayfs, curl, ...)"
 sudo apt-get update -y
 # fuse-overlayfs lets Docker's overlay storage work inside the nested
 # container used by Cloud Agents (the default overlay2 driver cannot mount).
-sudo apt-get install -y --no-install-recommends \
+sudo apt-get install "${APT_OPTS[@]}" --no-install-recommends \
   curl ca-certificates fuse-overlayfs
 
 if ! command -v docker >/dev/null 2>&1; then
