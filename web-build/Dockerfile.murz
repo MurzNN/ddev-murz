@@ -1,0 +1,18 @@
+#ddev-generated
+# Pre-create parent directories of the paths bind-mounted by
+# docker-compose.murz-mounts.yaml so they are owned by the web user
+# ($DDEV_UID) instead of root. Without this, Docker auto-creates the
+# mount points as root, which breaks the DDEV homeadditions copy (e.g.
+# writing $HOME/.bashrc.d/murz.sh) and other writes into $HOME.
+ARG username=ubuntu
+RUN mkdir -p \
+      /home/${username}/.bashrc.d \
+      /home/${username}/.config \
+      /home/${username}/.local/bin \
+      /home/${username}/.local/share/pnpm \
+      /home/${username}/.cache \
+    && chown -R "${username}:${username}" \
+      /home/${username}/.bashrc.d \
+      /home/${username}/.config \
+      /home/${username}/.local \
+      /home/${username}/.cache

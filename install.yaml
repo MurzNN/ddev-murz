@@ -11,5 +11,6 @@ project_files:
   - nginx/murz.https-redirect.conf
   - config.murz-custom.yaml
   - config.murz-packages.yaml
+  - web-build/Dockerfile.murz
   - homeadditions/.bashrc.d/murz.sh
   - homeadditions/bin/https-redirect.js
